@@ -191,10 +191,26 @@ label {
     margin-top: 6px;
 }
 
-
+/* Choix du genre centré dans le cadre */
 .choix-genre .options {
-    justify-content: space-between center;
+    justify-content: space-between;
     margin: 10px 0 6px;
+}
+
+/* Une option = case/bouton radio + son libellé (restent toujours ensemble) */
+.option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px;
+}
+
+.option label {
+    white-space: nowrap;
+}
+
+fieldset {
+    min-width: 0;
 }
 
 input[type="checkbox"],
@@ -297,7 +313,48 @@ input[type="radio"] {
         font-size: 1rem;
     }
 
-    .formulaire {
+    .formulaire,
+    .carte-niveau {
         padding: 16px;
+    }
+
+    /* Tailles de police réduites sur mobile */
+    .page {
+        font-size: 14px;
+    }
+
+    label,
+    .legende {
+        font-size: 14px;
+    }
+
+    .champ {
+        font-size: 14px;
+        padding: 9px 10px;
+    }
+
+    .titre-section,
+    .titre-formulaire {
+        font-size: 1.2rem;
+    }
+
+    .description-formulaire,
+    .note-obligatoire {
+        font-size: 14px;
+    }
+
+    .choix-genre,
+    .groupe-choix {
+        padding: 8px 10px;
+    }
+
+    .options {
+        gap: 4px 10px;
+    }
+
+    .bouton,
+    .zone-bouton .bouton {
+        font-size: 15px;
+        padding: 11px 32px;
     }
 }
