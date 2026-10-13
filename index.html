@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <title>Ma page personnelle</title>
+</head>
+<body class="page">
+
+    <!-- Présentation -->
+    <header class="entete">
+        <h1 class="titre-principal">Bienvenue sur ma page !</h1>
+        <p class="presentation">
+            Bonjour, je m'appelle Mirantsoa, je suis l'Assistant à la
+            Gestion de données et Systèmes Informatiques chez Projet Jeune Leader.
+        </p>
+    </header>
+
+    <!-- Passions -->
+    <section class="section-passions">
+        <h2 class="titre-section">Mes passions</h2>
+
+        <ul class="liste-passions">
+            <li class="passion">Cuisine</li>
+            <li class="passion">Film</li>
+            <li class="passion">Musique</li>
+        </ul>
+    </section>
+
+    <!-- Conteneur des deux formulaires (côte à côte sur ordinateur) -->
+    <main class="conteneur-formulaires">
+
+        <!-- Formulaire de contact -->
+        <section class="section-contact">
+            <form class="formulaire formulaire-contact"
+                  action="mailto:mirantsoa@projetjeuneleader.org"
+                  method="post"
+                  enctype="text/plain">
+
+                <h2 class="titre-formulaire">Contactez-moi</h2>
+
+                <p class="description-formulaire">
+                    Vous pouvez me contacter pour échanger sur
+                    l'informatique et le développement web.
+                </p>
+
+                <div class="groupe-champs">
+                    <label for="nom-contact">Nom :</label>
+                    <input class="champ" type="text" id="nom-contact"
+                           placeholder="Votre nom" name="nom" required>
+
+                    <label for="mail">Email :</label>
+                    <input class="champ" type="email" id="mail"
+                           placeholder="Votre email" name="mail" required>
+                </div>
+
+                <div class="groupe-champs">
+                    <label for="message">Message :</label>
+                    <textarea class="champ champ-message" id="message"
+                              name="message" placeholder="Votre message"
+                              required></textarea>
+                </div>
+
+                <div class="groupe-actions">
+                    <button class="bouton bouton-envoyer" type="submit">
+                        Envoyer
+                    </button>
+
+                    <p class="note-obligatoire">
+                        Tous les champs sont obligatoires.
+                    </p>
+                </div>
+            </form>
+        </section>
+
+        <!-- Formulaire d'inscription -->
+        <section class="section-inscription">
+            <form class="formulaire formulaire-inscription"
+                  id="form-inscription" action="" method="post">
+
+                <h2 class="titre-formulaire">Inscription</h2>
+
+                <div class="groupe-champs">
+                    <label for="calendrier">Date de naissance :</label>
+                    <input class="champ" type="date" id="calendrier"
+                           name="calendrier" required max="2026-10-09">
+
+                    <label for="nom-complet">Nom complet :</label>
+                    <input class="champ" type="text" id="nom-complet"
+                           placeholder="Votre nom complet" name="nom" required>
+                </div>
+
+    
+                <fieldset class="choix-genre">
+                    <legend class="legende">Genre</legend>
+
+                    <div class="options">
+                        <input type="radio" id="homme" name="genre"
+                               value="homme" required>
+                        <label for="homme">Homme</label>
+
+                        <input type="radio" id="femme" name="genre"
+                               value="femme" required>
+                        <label for="femme">Femme</label>
+                    </div>
+                </fieldset>
+
+                <div class="groupe-champs">
+                    <label for="age">Âge :</label>
+                    <input class="champ" type="number" id="age"
+                           placeholder="Votre âge" name="age"
+                           required min="18" max="60">
+
+                    <label for="telephone">Téléphone :</label>
+                    <input class="champ" type="tel" id="telephone"
+                           placeholder="Votre numéro de téléphone"
+                           name="telephone" required pattern="[0-9]{10}">
+
+                    <label for="mdp">Mot de passe :</label>
+                    <input class="champ" type="password" id="mdp"
+                           placeholder="Votre mot de passe" name="mdp"
+                           required minlength="8">
+                </div>
+
+                <!-- Conditions d'utilisation -->
+                <div class="groupe-conditions">
+                    <input type="checkbox" id="condition"
+                           name="condition" required>
+                    <label for="condition">
+                        J'accepte les conditions d'utilisation.
+                    </label>
+                </div>
+
+            </form>
+        </section>
+
+    </main>
+
+    <!-- Niveau informatique : section pleine largeur, sous les deux formulaires -->
+    <section class="section-niveau">
+        <div class="carte-niveau">
+
+            <h2 class="titre-formulaire">Votre profil informatique</h2>
+
+            <div class="groupe-champs">
+                <label for="niveau">Niveau informatique :</label>
+
+                <!-- L'attribut form relie ce champ au formulaire d'inscription -->
+                <select class="champ" id="niveau" name="niveau"
+                        form="form-inscription" required>
+                    <option value="" disabled selected>
+                        Choisissez votre niveau
+                    </option>
+                    <option value="debutant">Débutant</option>
+                    <option value="intermediaire">Intermédiaire</option>
+                    <option value="avance">Avancé</option>
+                </select>
+            </div>
+
+            <!-- Langages préférés -->
+            <fieldset class="groupe-choix">
+                <legend class="legende">
+                    Langages de programmation préférés
+                </legend>
+
+                <div class="options">
+                    <input type="checkbox" id="python" name="langage"
+                           value="Python" form="form-inscription">
+                    <label for="python">Python</label>
+
+                    <input type="checkbox" id="javascript" name="langage"
+                           value="JavaScript" form="form-inscription">
+                    <label for="javascript">JavaScript</label>
+
+                    <input type="checkbox" id="java" name="langage"
+                           value="Java" form="form-inscription">
+                    <label for="java">Java</label>
+                </div>
+            </fieldset>
+
+        </div>
+    </section>
+
+    <!-- Bouton S'inscrire : en dehors de toutes les sections -->
+    <div class="zone-bouton">
+        <button class="bouton bouton-inscription" type="submit"
+                form="form-inscription">
+            S'inscrire
+        </button>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,303 @@
+/* ===== Variables de couleurs ===== */
+:root {
+    --jaune: #fecb00;
+    --jaune-clair: #fff4c2;
+    --bleu: #86aebf;
+    --bleu-fonce: #3d6577;
+    --bleu-clair: #e8f1f5;
+    --texte: #22333b;
+    --blanc: #ffffff;
+    --ombre: 0 8px 24px rgba(34, 51, 59, 0.12);
+}
+
+/* ===== Style général ===== */
+* {
+    box-sizing: border-box;
+}
+
+.page {
+    font-family: "Segoe UI", Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    color: var(--texte);
+    background: linear-gradient(160deg, var(--bleu-clair) 0%, var(--blanc) 60%);
+    min-height: 100vh;
+    line-height: 1.5;
+}
+
+/* ===== En-tête ===== */
+.entete {
+    max-width: 1100px;
+    margin: 0 auto 24px;
+    padding: 30px 20px;
+    text-align: center;
+    background: linear-gradient(135deg, var(--jaune), var(--bleu));
+    border-radius: 16px;
+    box-shadow: var(--ombre);
+}
+
+.titre-principal {
+    margin: 0 0 12px;
+    font-size: 2.4rem;
+    color: var(--texte);
+    letter-spacing: 0.5px;
+}
+
+.presentation {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    color: var(--texte);
+}
+
+/* ===== Titres ===== */
+.titre-section,
+.titre-formulaire {
+    margin-top: 0;
+    color: var(--bleu-fonce);
+    padding-bottom: 8px;
+    border-bottom: 3px solid var(--jaune);
+    display: inline-block;
+}
+
+/* ===== Passions ===== */
+.section-passions {
+    max-width: 1100px;
+    margin: 0 auto 24px;
+    padding: 20px 24px;
+    background: var(--blanc);
+    border-radius: 16px;
+    box-shadow: var(--ombre);
+}
+
+.liste-passions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    list-style: none;
+    margin: 12px 0 0;
+    padding: 0;
+}
+
+.passion {
+    padding: 8px 20px;
+    background-color: var(--jaune-clair);
+    border: 2px solid var(--jaune);
+    border-radius: 999px;
+    font-weight: 600;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.passion:hover {
+    background-color: var(--jaune);
+    transform: translateY(-2px);
+}
+
+/* ===== Conteneur des formulaires : vertical sur mobile ===== */
+.conteneur-formulaires {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.section-contact,
+.section-inscription {
+    flex: 1;
+}
+
+/* ===== Formulaires ===== */
+.formulaire {
+    height: 100%;
+    margin: 0;
+    padding: 24px;
+    background: var(--blanc);
+    border-radius: 16px;
+    border-top: 6px solid var(--jaune);
+    box-shadow: var(--ombre);
+}
+
+.formulaire-inscription {
+    border-top-color: var(--bleu);
+}
+
+.description-formulaire,
+.note-obligatoire {
+    font-size: 1rem;
+}
+
+.note-obligatoire {
+    margin: 12px 0 0;
+    font-size: 0.9rem;
+    color: var(--bleu-fonce);
+}
+
+/* ===== Champs ===== */
+.groupe-champs {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 20px 0;
+}
+
+label {
+    font-weight: 600;
+}
+
+.champ {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 1rem;
+    font-family: inherit;
+    color: var(--texte);
+    background-color: var(--bleu-clair);
+    border: 2px solid transparent;
+    border-radius: 8px;
+    transition: border-color 0.2s, background-color 0.2s;
+}
+
+.champ:focus {
+    outline: none;
+    border-color: var(--bleu);
+    background-color: var(--blanc);
+}
+
+.champ-message {
+    min-height: 140px;
+    resize: vertical;
+}
+
+/* ===== Groupes de choix ===== */
+.choix-genre,
+.groupe-choix {
+    margin: 20px 0;
+    padding: 15px;
+    border: 2px solid var(--bleu);
+    border-radius: 10px;
+}
+
+.legende {
+    padding: 0 8px;
+    font-weight: bold;
+    color: var(--bleu-fonce);
+}
+
+.options {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 14px;
+    margin-top: 6px;
+}
+
+
+.choix-genre .options {
+    justify-content: space-between center;
+    margin: 10px 0 6px;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    accent-color: var(--bleu-fonce);
+    width: 16px;
+    height: 16px;
+}
+
+.groupe-conditions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 20px 0;
+}
+
+/* ===== Boutons ===== */
+.groupe-actions {
+    margin-top: 20px;
+}
+
+.bouton {
+    padding: 12px 28px;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--texte);
+    background-color: var(--jaune);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.bouton:hover {
+    background-color: var(--bleu);
+    color: var(--blanc);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(34, 51, 59, 0.2);
+}
+
+.bouton-inscription {
+    background-color: var(--bleu);
+    color: var(--blanc);
+}
+
+.bouton-inscription:hover {
+    background-color: var(--jaune);
+    color: var(--texte);
+}
+
+/* ===== Section niveau informatique (même largeur que les 2 formulaires) ===== */
+.section-niveau {
+    max-width: 1100px;
+    margin: 24px auto 0;
+}
+
+.carte-niveau {
+    padding: 24px;
+    background: var(--blanc);
+    border-radius: 16px;
+    border-top: 6px solid var(--bleu);
+    box-shadow: var(--ombre);
+}
+
+.carte-niveau .titre-formulaire {
+    margin-top: 15px;
+}
+
+/* ===== Bouton S'inscrire (hors sections) ===== */
+.zone-bouton {
+    max-width: 1100px;
+    margin: 24px auto 0;
+    text-align: center;
+}
+
+.zone-bouton .bouton {
+    padding: 14px 48px;
+    font-size: 1.1rem;
+}
+
+/* ===== Ordinateur : formulaires côte à côte ===== */
+@media screen and (min-width: 768px) {
+    .conteneur-formulaires {
+        flex-direction: row;
+        align-items: stretch;
+    }
+}
+
+/* ===== Smartphones ===== */
+@media screen and (max-width: 767px) {
+    .page {
+        padding: 10px;
+    }
+
+    .titre-principal {
+        font-size: 1.7rem;
+    }
+
+    .presentation {
+        font-size: 1rem;
+    }
+
+    .formulaire {
+        padding: 16px;
+    }
+}
